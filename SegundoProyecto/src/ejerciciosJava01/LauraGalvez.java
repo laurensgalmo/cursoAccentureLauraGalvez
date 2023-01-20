@@ -1,5 +1,12 @@
 package ejerciciosJava01;
 
+/**
+ * Utilizar bloc de notas y mostrar por consola el resultado.
+ * 
+ * @author laura.galvez.moya
+ *
+ */
+
 public class LauraGalvez {
 
 	public static void main(String[] args) {

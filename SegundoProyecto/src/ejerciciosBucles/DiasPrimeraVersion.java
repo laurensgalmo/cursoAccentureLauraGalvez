@@ -1,14 +1,16 @@
 package ejerciciosBucles;
 
+/**
+ * Hacer una clase, definiendo día=20, mes =8,año = 2015, y luego añadir el
+ * código para comprobar que la fecha es correcta. En la primera version, asumir
+ * meses de 30 dias.
+ * 
+ * @author laura.galvez.moya
+ */
+
 public class DiasPrimeraVersion {
 
 	public static void main(String[] args) {
-
-		/*
-		 * Hacer una clase, definiendo día=20, mes =8,año = 2015, y luego añadir el
-		 * código para comprobar que la fecha es correcta.
-		 * En la primera version, asumir meses de 30 dias.
-		 */
 
 		int dia = 20;
 		int mes = 8;

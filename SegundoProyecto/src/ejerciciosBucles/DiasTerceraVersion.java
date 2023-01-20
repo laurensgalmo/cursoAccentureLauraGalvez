@@ -1,14 +1,16 @@
 package ejerciciosBucles;
 
+/**
+ * Hacer una clase, definiendo día=20, mes =8,año = 2015, y luego añadir el
+ * código para comprobar que la fecha es correcta. En la tercera, utilizar
+ * arrays.
+ * 
+ * @author laura.galvez.moya
+ */
+
 public class DiasTerceraVersion {
 
 	public static void main(String[] args) {
-
-		/*
-		 * Hacer una clase, definiendo día=20, mes =8,año = 2015, y luego añadir el
-		 * código para comprobar que la fecha es correcta.
-		 * En la tercera, utilizar arrays.
-		 */
 
 		int dia = 32;
 		int mes = 4;

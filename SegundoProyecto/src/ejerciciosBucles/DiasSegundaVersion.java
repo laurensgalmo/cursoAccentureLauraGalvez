@@ -1,23 +1,25 @@
 package ejerciciosBucles;
 
+/**
+ * Hacer una clase, definiendo día=20, mes =8,año = 2015, y luego añadir el
+ * código para comprobar que la fecha es correcta. En la segunda version,
+ * utilizar los días reales de cada mes, sin arrays.
+ * 
+ * @author laura.galvez.moya
+ */
+
 public class DiasSegundaVersion {
 
 	public static void main(String[] args) {
-
-		/*
-		 * Hacer una clase, definiendo día=20, mes =8,año = 2015, y luego añadir el
-		 * código para comprobar que la fecha es correcta. En la segunda version,
-		 * utilizar los días reales de cada mes, sin arrays.
-		 */
 
 		int dia = 20;
 		int mes = 8;
 		int año = 2015;
 
 		boolean hola = false;
-		
-		//Al no poder usar arrays, haremos uso del condicional "switch".
-		
+
+		// Al no poder usar arrays, haremos uso del condicional "switch".
+
 		switch (mes) {
 
 		case 1:

@@ -1,5 +1,13 @@
 package ejerciciosBucles;
 
+/**
+ * En este proyecto, se trata de mostrar por consola las tablas de multiplicar
+ * del 1 al 10.
+ * 
+ * @author laura.galvez.moya
+ *
+ */
+
 public class TablasMultiplicar {
 
 	public static void main(String[] args) {

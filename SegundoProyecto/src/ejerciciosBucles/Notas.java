@@ -1,13 +1,15 @@
 package ejerciciosBucles;
 
+/**
+ * Crear una variable (nota) con el valor 6. Decidir el texto que se ha de
+ * presentar según la siguiente escala.
+ * 
+ * @author laura.galvez.moya
+ */
+
 public class Notas {
 
 	public static void main(String[] args) {
-
-		/*
-		 * Crear una variable (nota) con el valor 6. Decidir el texto que se ha de
-		 * presentar según la siguiente escala.
-		 */
 
 		int nota = 6;
 

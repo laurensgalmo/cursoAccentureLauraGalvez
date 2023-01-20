@@ -1,5 +1,12 @@
 package ejerciciosBucles;
 
+/**
+ * En este programa se trata de dibujar un cuadrado
+ * 
+ * @author laura.galvez.moya
+ *
+ */
+
 public class DibujaCuadrado {
 
 	public static void main(String[] args) {

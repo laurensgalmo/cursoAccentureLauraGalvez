@@ -1,11 +1,13 @@
 package ejerciciosJava03;
 
-public class Datos2 {
+/**
+ * Modificar el programa, guardándolo con el nombre Datos2, y haciendo que las
+ * variables puedan ser vistas por cualquier método de la clase.
+ * 
+ * @author laura.galvez.moya
+ */
 
-	/*
-	 * Modificar el programa, guardándolo con el nombre Datos2, y haciendo que las
-	 * variables puedan ser vistas por cualquier método de la clase.
-	 */
+public class Datos2 {
 
 	// UN METODO STATIC ACCEDE A ATRIBUTOS STATIC
 	// UN METODO NO STATIC PUEDE ACCEDER A TODOS

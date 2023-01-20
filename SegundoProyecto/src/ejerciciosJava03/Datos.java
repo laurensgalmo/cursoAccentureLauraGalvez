@@ -1,16 +1,18 @@
 package ejerciciosJava03;
 
+/**
+ * Escribe la clase Datos, en la misma, define las siguientes variables: dia,
+ * con un valor inicial de 10 nDni, para números de DNI, con un valor inicial de
+ * 57.433.222 precio para valores numéricos con dos decimales una constante con
+ * nombre «ACTIVO», y con valor true carga la variable precio con el valor
+ * 135.12 Preséntalo todo en consola; parte 1.
+ * 
+ * @author laura.galvez.moya
+ */
+
 public class Datos {
 
 	public static void main(String[] args) {
-
-		/*
-		 * Escribe la clase Datos, en la misma, define las siguientes variables: dia,
-		 * con un valor inicial de 10 nDni, para números de DNI, con un valor inicial de
-		 * 57.433.222 precio para valores numéricos con dos decimales una constante con
-		 * nombre «ACTIVO», y con valor true carga la variable precio con el valor
-		 * 135.12 Preséntalo todo en consola.
-		 */
 
 		// TODOS ESTOS CAMPOS SOLO SON VISIBLES PARA MAIN
 

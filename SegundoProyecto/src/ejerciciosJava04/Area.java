@@ -1,11 +1,15 @@
 package ejerciciosJava04;
 
+/**
+ * Dado el radio, (23), calcular el área del circulo y la longitud de la
+ * circunferencia.
+ * 
+ * @author laura.galvez.moya
+ *
+ */
 public class Area {
 
 	public static void main(String[] args) {
-
-		// Dado el radio, (23), calcular el área del circulo y la longitud de la
-		// circunferencia.
 
 		double area;
 		double longitud;

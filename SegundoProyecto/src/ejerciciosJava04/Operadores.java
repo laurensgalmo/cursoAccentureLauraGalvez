@@ -1,13 +1,15 @@
 package ejerciciosJava04;
 
+/**
+ * Intenta predecir que resultado daría el siguiente código; después puedes
+ * escribirlo y ejecutarlo para comprobar el resultado.
+ * 
+ * @author laura.galvez.moya
+ */
+
 public class Operadores {
 
 	public static void main(String[] args) {
-
-		/*
-		 * Intenta predecir que resultado daría el siguiente código; después puedes
-		 * escribirlo y ejecutarlo para comprobar el resultado.
-		 */
 
 		int valor = 0;
 		valor = 23;

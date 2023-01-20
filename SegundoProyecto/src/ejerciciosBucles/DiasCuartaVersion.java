@@ -1,14 +1,16 @@
 package ejerciciosBucles;
 
+/**
+ * Hacer una clase, definiendo día=20, mes =8,año = 2015, y luego añadir el
+ * código para comprobar que la fecha es correcta. En la cuarta, tened en cuenta
+ * los años bisiestos.
+ * 
+ * @author laura.galvez.moya
+ */
+
 public class DiasCuartaVersion {
 
 	public static void main(String[] args) {
-
-		/*
-		 * Hacer una clase, definiendo día=20, mes =8,año = 2015, y luego añadir el
-		 * código para comprobar que la fecha es correcta.
-		 * En la cuarta, tened en cuenta los años bisiestos.
-		 */
 
 		int dia = 28;
 		int mes = 2;

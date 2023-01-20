@@ -1,11 +1,15 @@
 package ejerciciosBucles;
 
+/**
+ * Recoger una frase desde la línea de comando y darle la vuelta. Para ello
+ * vamos a realzar distintas implementaciones.
+ * 
+ * @author laura.galvez.moya
+ *
+ */
 public class VueltaFrase {
 
 	public static void main(String[] args) {
-
-		// Recoger una frase desde la línea de comando y darle la vuelta.
-		// Para ello vamos a realzar distintas implementaciones.
 
 		System.out.println("---------P R I M E R O---------");
 
@@ -19,7 +23,7 @@ public class VueltaFrase {
 
 		System.out.println("---------S E G U N D O---------");
 
-		// INVERSA DE LA CADENA.
+		// INVERSA DE LA CADENA
 
 		String[] palabras = salida.split(" ");
 		int reves = palabras.length;
@@ -31,7 +35,7 @@ public class VueltaFrase {
 
 		System.out.println("\n---------T E R C E R O---------");
 
-		// INVERSA DE CARÁCTERES.
+		// INVERSA DE CARÁCTERES
 
 		String salida2 = "";
 		int salida3 = salida.length();
@@ -46,7 +50,7 @@ public class VueltaFrase {
 
 		System.out.println("---------C U A R T O---------");
 
-		// CAMBIO DE VOCALES POR NÚMEROS CON EL USO DE SWITCH.
+		// CAMBIO DE VOCALES POR NÚMEROS CON EL USO DE SWITCH
 
 		String salida4 = "";
 		int ls2 = salida.length();
@@ -61,7 +65,7 @@ public class VueltaFrase {
 
 		System.out.println("---------Q U I N T O---------");
 
-		// SIN USAR ATRIBUTO LENGHT; CALCULAR LA LONGITUD BUSCANDO EL CARÁCTER FINAL.
+		// SIN USAR ATRIBUTO LENGHT; CALCULAR LA LONGITUD BUSCANDO EL CARÁCTER FINAL
 
 		char bus = salida.charAt(0);
 		String salida6 = "";
@@ -76,7 +80,7 @@ public class VueltaFrase {
 
 		System.out.println("\n----SEXTO----");
 
-		// SIN CALCULAR LA LONGITUD DE LA STRING.
+		// SIN CALCULAR LA LONGITUD DE LA STRING
 
 		salida += (char) 0;
 		int pos = 0;
