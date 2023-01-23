@@ -22,8 +22,8 @@ public class Circulo extends Geometria {
 
 	// Constructor
 
-	public Circulo(String nombre, int radio) {
-		super(nombre);
+	public Circulo(String nombre, int radio, int ancho, int alto) {
+		super(nombre, ancho, alto);
 		this.radio = radio; // A = π r²
 	}
 
@@ -55,8 +55,8 @@ public class Circulo extends Geometria {
 
 	@Override
 	public String toString() {
-		return "El área del " + this.getNombre() + " con radio " + radio + " es igual a " + this.area() + "\n"
-				+ this.dibujar();
+		return "El área del " + this.getNombre() + " con radio " + radio + " es igual a " + this.area()
+				+ ", el ancho es de " + ancho + " y por último, el alto es " + alto + "\n" + this.dibujar();
 	}
 
 }

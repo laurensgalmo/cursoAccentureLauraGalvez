@@ -22,8 +22,8 @@ public class Cuadrado extends Geometria {
 
 	// Constructor
 
-	public Cuadrado(String nombre, int lado) {
-		super(nombre);
+	public Cuadrado(String nombre, int lado, int alto, int ancho) {
+		super(nombre, alto, ancho);
 
 		this.lado = lado; // A = cuadrado de la longitud del lado
 	}
@@ -51,7 +51,7 @@ public class Cuadrado extends Geometria {
 
 	@Override
 	public String toString() {
-		return "El área del " + this.getNombre() + " con lado " + lado + " es igual a " + this.area() + "\n"
-				+ this.dibujar();
+		return "El área del " + this.getNombre() + " con lado " + lado + " es igual a " + this.area()
+				+ ", el ancho es de " + ancho + " y por último, el alto es " + alto + "\n" + this.dibujar();
 	}
 }

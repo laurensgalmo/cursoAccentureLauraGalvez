@@ -24,8 +24,8 @@ public class Triangulo extends Geometria {
 
 	// Constructor
 
-	public Triangulo(String nombre, int base, int altura) {
-		super(nombre);
+	public Triangulo(String nombre, int base, int altura, int alto, int ancho) {
+		super(nombre, alto, ancho);
 
 		this.base = base;
 		this.altura = altura; // A = base por la altura dividido por dos
@@ -75,7 +75,8 @@ public class Triangulo extends Geometria {
 	@Override
 	public String toString() {
 		return "El área del " + this.getNombre() + " con base " + base + " y altura " + altura
-				+ " entre dos, es igual a " + this.area() + "\n" + this.dibujar();
+				+ " entre dos, es igual a " + this.area() + ", el ancho es de " + ancho + " y por último, el alto es "
+				+ alto + "\n" + this.dibujar();
 
 	}
 }
