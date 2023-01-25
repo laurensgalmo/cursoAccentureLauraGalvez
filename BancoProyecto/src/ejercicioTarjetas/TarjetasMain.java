@@ -23,28 +23,29 @@ public class TarjetasMain {
 		c = new Cuenta("111", "Laura Galvez Moya");
 
 		// Ingresar
-
 		c.ingresar(1000);
-		c.ingresar("Esto es retirada\t", 2400);
-		c.retirar(600);
-		c.retirar("Esto es retirada\t", 3000);
+		c.ingresar("Esto es ingresar\t", 240);
+		c.retirar(60);
+		c.retirar("Esto es retirada\t", 30);
 
 		// Para Tarjeta Débito
-
 		debito = new ClaseDebito(dia, "ES227676768858549", "Laura Galvez Moya");
 		debito.setCuenta(c);
 		debito.ingresar(100);
 		debito.retirar(50);
 
 		// Para tarjeta Crédito
-
 		credito = new ClaseCredito(dia, "ES458323846238764", "Laura Galvez Moya", 500);
 		credito.setCuenta(c);
 		credito.ingresar(400);
 		credito.retirar(1);
-		
+
+		System.out.println();
+		credito.verTodosLosMovimientosDeCredito();
+		System.out.println();
 		c.verTodosLosMovimientos();
-		
+		System.out.println();
+		credito.liquidacion(dia.getMonthValue(), dia.getDayOfYear());
 	}
 
 }

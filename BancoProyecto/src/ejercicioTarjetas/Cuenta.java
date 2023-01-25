@@ -29,6 +29,10 @@ public class Cuenta {
 
 	// getSaldo():double
 
+	public Cuenta() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public double getSaldo() {
 
 		double z = 0;
@@ -68,7 +72,6 @@ public class Cuenta {
 
 	public void retirar(double x) throws Exception {
 		retirar("Retirada efectivo \t ", x);
-
 	}
 
 	// ingresar(String concepto, double x):void
@@ -83,13 +86,10 @@ public class Cuenta {
 	// retirar(String concepto, double x): void
 
 	public void retirar(String concepto, double x) throws Exception {
-		if (x <= 0) {
-			throw new Exception("La cantidad es negativa, no se puede retirar");
-		}
 		if (getSaldo() < x) {
 			throw new Exception("El saldo es insuficiente ");
 		}
-		addMovimiento(concepto, x);
+		addMovimiento(concepto, -x);
 	}
 
 	// Getters y Setters
@@ -109,16 +109,19 @@ public class Cuenta {
 	public void setmTitular(String mTitular) {
 		this.mTitular = mTitular;
 	}
-	
+
 	public void verTodosLosMovimientos() {
-		System.out.println("********** MOVIMIENTOS DE LA CUENTA **********");
-		for(Movimiento m : mMovimientos) {
-			
-			System.out.println(m.getMiFecha() + "\t" + m.getMiConcepto()
-			+ "\t\t\t" + m.getMiImporte());
-			
+		System.out.println(
+				"****************************** M O V I M I E N T O S   D E   L A   C U E N T A ******************************");
+		double z = 0;
+
+		for (Movimiento m : mMovimientos) {
+			z += m.getMiImporte();
+			System.out
+					.println(m.getMiFecha() + "\t" + m.getMiConcepto() + "\t\t\t\t" + m.getMiImporte() + "\t\t\t" + z);
+
 		}
-	
+
 	}
 
 }

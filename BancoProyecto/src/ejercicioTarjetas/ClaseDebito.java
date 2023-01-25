@@ -16,7 +16,7 @@ public class ClaseDebito extends Tarjeta {
 
 	@Override
 	public void ingresar(double x) throws Exception {
-		this.getmCuentaAsociada().ingresar("Ingreso en cuenta asociada ", x);
+		this.getmCuentaAsociada().ingresar("Ingreso en cuenta asociada", x);
 
 	}
 
@@ -28,6 +28,7 @@ public class ClaseDebito extends Tarjeta {
 
 	@Override
 	public void retirar(double x) throws Exception {
+
 		this.getmCuentaAsociada().retirar("Retirada en cuenta asociada ", x);
 	}
 

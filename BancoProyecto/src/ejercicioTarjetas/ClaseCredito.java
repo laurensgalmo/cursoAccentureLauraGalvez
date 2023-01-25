@@ -9,8 +9,8 @@ public class ClaseCredito extends Tarjeta {
 
 	// Constantes
 
-	private static final double COMISION = 0;
-	private static final double MINIMO_COMISION = 0;
+	private static final double COMISION = 0.05;
+	private static final double MINIMO_COMISION = 3;
 
 	// Atributos
 
@@ -34,7 +34,11 @@ public class ClaseCredito extends Tarjeta {
 
 	@Override
 	public void ingresar(double x) throws Exception {
-		this.getmCuentaAsociada().ingresar("Ingreso en cajero automático ", x);
+		Movimiento m = new Movimiento();
+		m.setMiFecha(getmFechaDeCaducidad());
+		m.setMiConcepto("Ingreso en cuenta asociada (cajero automático)");
+		m.setMiImporte(x);
+		mMovimientos.add(m);
 	}
 
 	@Override
@@ -52,7 +56,7 @@ public class ClaseCredito extends Tarjeta {
 			}
 			Movimiento m = new Movimiento();
 			m.setMiFecha(getmFechaDeCaducidad());
-			m.setMiConcepto("RETIRADA EN CAJERO AUTOMÁTICO");
+			m.setMiConcepto("Retirada en cuenta asociada (cajero automático)");
 			m.setMiImporte(-x);
 			mMovimientos.add(m);
 		}
@@ -62,10 +66,10 @@ public class ClaseCredito extends Tarjeta {
 
 	public void liquidacion(int mes, int año) {
 		Movimiento liquidar = new Movimiento();
-		// AQUI FECHA
-		double r = 0.0;
+		double r = 5.0;
 
-		for (Iterator iter = mMovimientos.iterator(); iter.hasNext();) {
+		for (@SuppressWarnings("rawtypes")
+		Iterator iter = mMovimientos.iterator(); iter.hasNext();) {
 			Movimiento movim = (Movimiento) iter.next();
 			if (movim.getMiFecha().getMonthValue() == mes && movim.getMiFecha().getYear() == año) {
 				r += movim.getMiImporte();
@@ -78,6 +82,10 @@ public class ClaseCredito extends Tarjeta {
 		if (r != 0) {
 			getmCuentaAsociada().addMovimiento(liquidar);
 		}
+
+		System.out.println(liquidar.getMiFecha() + "\t" + "Liquidación de operaciones de tarj crédito, "
+				+ liquidar.getMiFecha().getMonthValue() + " del " + liquidar.getMiFecha().getYear() + "\t "
+				+ liquidar.getMiImporte() + "\t\t\t" + getSaldo());
 	}
 
 	// Getters y Setters
@@ -98,4 +106,16 @@ public class ClaseCredito extends Tarjeta {
 		this.mMovimientos = mMovimientos;
 	}
 
+	public void verTodosLosMovimientosDeCredito() {
+		System.out.println(
+				"****************************** M O V I M I E N T O S   D E   C R E D I T O **********************************");
+		double z = 0;
+
+		for (Movimiento m : mMovimientos) {
+			z += m.getMiImporte();
+			System.out.println(m.getMiFecha() + "\t" + m.getMiConcepto() + "\t\t" + m.getMiImporte() + "\t\t\t" + z);
+
+		}
+
+	}
 }

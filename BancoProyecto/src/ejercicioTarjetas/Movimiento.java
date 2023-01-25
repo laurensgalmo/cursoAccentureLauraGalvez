@@ -43,9 +43,4 @@ public class Movimiento {
 		this.miImporte = miImporte;
 	}
 
-	@Override
-	public String toString() {
-		return "Movimiento [miConcepto=" + miConcepto + ", miFecha=" + miFecha + ", miImporte=" + miImporte + "]";
-	}
-
 }
