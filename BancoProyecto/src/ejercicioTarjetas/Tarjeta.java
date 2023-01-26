@@ -2,6 +2,13 @@ package ejercicioTarjetas;
 
 import java.time.LocalDate;
 
+/**
+ * SuperClase que hará herencia en ClaseDebito y ClaseCredito
+ * 
+ * @author laura.galvez.moya
+ *
+ */
+
 public abstract class Tarjeta {
 
 	// Atributos

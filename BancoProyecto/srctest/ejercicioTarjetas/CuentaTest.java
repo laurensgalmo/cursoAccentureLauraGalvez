@@ -5,15 +5,22 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import filtros.FiltroCastellano;
+
 class CuentaTest {
-	
-	final double DINERO = 12.12;
-	final String CONCEPTO = "Esto es un movimiento en la cuenta";
 	static Cuenta cuenta;
 
+	// CORRECTO
+	final double DINERO = 12.12;
+	final String NUMERO_CUENTA = "12345678910112131415";
+	final String TITULAR = "Laura Galvez Moya";
+	final String CONCEPTO = "Esto es un movimiento en la cuenta";
+	// INCORRECTO
+
 	@BeforeEach
-	void creacionCuenta() {
-		cuenta = new Cuenta();
+	void inicio() {
+		// FiltroCastellano filtro = new FiltroCastellano();
+		cuenta = new Cuenta(NUMERO_CUENTA, TITULAR);
 	}
 
 	@Test
@@ -37,24 +44,23 @@ class CuentaTest {
 	}
 
 	@Test
-	void testRetirarDouble() {
-		fail("Not yet implemented");
+	void testRetirarDouble() throws Exception {
+		cuenta.ingresar(DINERO);
+		cuenta.retirar(DINERO);
+		assertEquals(DINERO, cuenta.getSaldo());
 	}
 
 	@Test
-	void testIngresarStringDouble() throws Exception{
+	void testIngresarStringDouble() {
+
+	}
+
+	@Test
+	void testRetirarStringDouble() throws Exception {
 		cuenta.ingresar(DINERO);
 		cuenta.retirar(CONCEPTO, DINERO);
 		assertEquals(DINERO, cuenta.getSaldo());
-		
-		
 	}
-
-	@Test
-	void testRetirarStringDouble() {
-		fail("Not yet implemented");
-	}
-
 
 	@Test
 	void testVerTodosLosMovimientos() {

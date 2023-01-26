@@ -2,6 +2,13 @@ package ejercicioTarjetas;
 
 import java.time.LocalDate;
 
+/**
+ * Clase POJO
+ * 
+ * @author laura.galvez.moya
+ *
+ */
+
 public class Movimiento {
 
 	// Atributos

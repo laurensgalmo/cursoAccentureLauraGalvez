@@ -2,12 +2,31 @@ package ejercicioTarjetas;
 
 import java.time.LocalDate;
 
+/**
+ * Clase de la tarjeta débito, hereda de la superClase Tarjeta.
+ * 
+ * @author laura.galvez.moya
+ *
+ */
+
 public class ClaseDebito extends Tarjeta {
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param mFechaDeCaducidad
+	 * @param mNumero
+	 * @param mTitular
+	 */
 
 	public ClaseDebito(LocalDate mFechaDeCaducidad, String mNumero, String mTitular) {
 		super(mFechaDeCaducidad, mNumero, mTitular);
 
 	}
+
+	/**
+	 * Métodos heredados.
+	 */
 
 	@Override
 	public double getSaldo() {

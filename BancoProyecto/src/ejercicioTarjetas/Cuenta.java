@@ -110,6 +110,12 @@ public class Cuenta {
 		this.mTitular = mTitular;
 	}
 
+	/**
+	 * Creo un método llamado verTodosLosMovimientos();, para poder visualizar por
+	 * consola los movimientos de la cuenta. Este método tiene, un syso para mostrar
+	 * un título y un bucle forEach.
+	 */
+
 	public void verTodosLosMovimientos() {
 		System.out.println(
 				"****************************** M O V I M I E N T O S   D E   L A   C U E N T A ******************************");

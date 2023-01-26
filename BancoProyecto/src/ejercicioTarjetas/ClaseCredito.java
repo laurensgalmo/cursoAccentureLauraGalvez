@@ -5,9 +5,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Clase de la tarjeta crédito, hereda de la superClase Tarjeta.
+ * 
+ * @author laura.galvez.moya
+ *
+ */
 public class ClaseCredito extends Tarjeta {
 
-	// Constantes
+	/**
+	 * Constantes para retirar
+	 */
 
 	private static final double COMISION = 0.05;
 	private static final double MINIMO_COMISION = 3;
@@ -17,7 +25,14 @@ public class ClaseCredito extends Tarjeta {
 	private double mCredito;
 	private List<Movimiento> mMovimientos;
 
-	// Constructor
+	/**
+	 * Constructor.
+	 * 
+	 * @param mFechaDeCaducidad
+	 * @param mNumero
+	 * @param mTitular
+	 * @param credito
+	 */
 
 	public ClaseCredito(LocalDate mFechaDeCaducidad, String mNumero, String mTitular, double credito) {
 		super(mFechaDeCaducidad, mNumero, mTitular);
@@ -25,11 +40,11 @@ public class ClaseCredito extends Tarjeta {
 		mMovimientos = new ArrayList<>();
 	}
 
-	// Métodos
+	// Métodos heredados.
 
 	@Override
 	public double getSaldo() {
-		return getmCuentaAsociada().getSaldo(); // tiene saldo y saldo de crédito
+		return getmCuentaAsociada().getSaldo();
 	}
 
 	@Override
@@ -62,12 +77,17 @@ public class ClaseCredito extends Tarjeta {
 		}
 	}
 
-	// Método LIQUIDAR
-
 	public void liquidacion(int mes, int año) {
-		Movimiento liquidar = new Movimiento();
+        Movimiento liquidar = new Movimiento();
 		double r = 5.0;
-
+		
+		//USANDO STEAMS, INCOMPLETO.
+		/*r = mMovimientos.stream()
+				.filter(mov -> mov.getMiFecha(getMiFecha().getMonthValue() == mes && movim.getMiFecha().getYear() == año)
+				.map(mov -> mov.getImporte())
+				.reduce(0d,(subt, el) -> subt + el);S*/
+				
+						
 		for (@SuppressWarnings("rawtypes")
 		Iterator iter = mMovimientos.iterator(); iter.hasNext();) {
 			Movimiento movim = (Movimiento) iter.next();
@@ -105,6 +125,12 @@ public class ClaseCredito extends Tarjeta {
 	public void setmMovimientos(List<Movimiento> mMovimientos) {
 		this.mMovimientos = mMovimientos;
 	}
+
+	/**
+	 * He creado un método verTodosLosMovimientosDeCredito();, para poder observar
+	 * por consola los moviminetos de la tarjeta de crédito. Este consta de un syso
+	 * que me muestra un título,y un bucle forEach.
+	 */
 
 	public void verTodosLosMovimientosDeCredito() {
 		System.out.println(
