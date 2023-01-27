@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -48,29 +49,9 @@ public class FiltroCastellano implements FiltroInternacional {
 		return fechaMaxima(fecha, maximaF) || fechaMinima(fecha, minimaF);
 	}
 
-	// F E C H A C O R R E C T A
-
-	public LocalDate fechasCorrectas(String fecha) throws Exception {
-		Date date;
-		try {
-			date = new SimpleDateFormat("dd-MM-yyyy").parse(fecha);
-		} catch (DateTimeException e) {
-			return null;
-		}
-
-		return LocalDate.ofInstant(date.toInstant(), ZoneId.systemDefault());
+	@Override
+	public LocalDate fechasCorrectasFormato(String fecha) throws Exception {
+		return fechasCorrectasFormato(fecha, "dd-MM-yyyy");
 	}
 
-	// F E C H A C O R R E C T A C O N F O R M A T O ---PENDIENTE---
-
-	public LocalDate fechasCorrectasConFormato(String fecha, String formato) throws Exception {
-		Date date = null;
-		try {
-			date = new SimpleDateFormat(formato).parse(fecha);
-		} catch (DateTimeException e) {
-			return null;
-		}
-
-		return LocalDate.ofInstant(date.toInstant(), ZoneId.systemDefault());
-	}
 }

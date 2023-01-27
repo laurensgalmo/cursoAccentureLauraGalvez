@@ -1,6 +1,8 @@
 package filtros;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
@@ -25,7 +27,8 @@ class FiltrosTest {
 	final LocalDate LOCAL_DATE2 = LocalDate.of(2023, 01, 26);
 	final LocalDate LOCAL_DATE3 = LocalDate.of(2021, 01, 25);
 	final String FECHA1 = "26-01-2023";
-	final String FECHAERR = "265444/01/2023";
+	final String FECHA2 = "26/01/2023";
+	final String FECHAERR = "26.01.2023";
 
 	FiltroCastellano filtro = new FiltroCastellano();
 
@@ -65,16 +68,13 @@ class FiltrosTest {
 	void fechaAnio() {
 		assertTrue(filtro.fechaAños(LOCAL_DATE3, 2023, 2020));
 	}
-
+	
 	@Test
-	void fechaCorrecta() throws Exception {
-		equals(filtro.fechasCorrectas(FECHA1));
+	
+	void fechasCorrectas() throws Exception {
+		assertEquals(filtro.fechasCorrectasFormato(FECHA1), LocalDate.of(2023, 01, 26));
+		assertEquals(filtro.fechasCorrectasFormato(FECHA2, "dd/MM/yyyy"), LocalDate.of(2023, 01, 26));
+		assertNotEquals(filtro.fechasCorrectasFormato(FECHAERR), LocalDate.of(2023, 01, 26));
+		assertEquals(filtro.fechasCorrectasFormato(FECHAERR),null);
 	}
-	
-	/*@Test
-	void fechaInCorrecta() throws Exception {
-		
-		equals(filtro.fechasCorrectas(FECHAERR));
-	}*/
-	
 }
