@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 class ValidatorTest {
 
-	final String TEXTO_BUENO = "Laura?Galvez!Moya$$";
+	final String TEXTO_BUENO = "LauraGalvezMoya99";
 	final String MOVIL_BUENO = "65565575534";
 	final String MOVIL_MALO = "01234567891011121314151617181920";
 	final String EMAIL_BUENO = "test@gmail.com";

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Clase de la tarjeta crédito, hereda de la superClase Tarjeta.
@@ -78,26 +79,26 @@ public class ClaseCredito extends Tarjeta {
 	}
 
 	public void liquidacion(int mes, int año) {
-        Movimiento liquidar = new Movimiento();
+		Movimiento liquidar = new Movimiento();
 		double r = 5.0;
-		
-		//USANDO STEAMS, INCOMPLETO.
-		/*r = mMovimientos.stream()
-				.filter(mov -> mov.getMiFecha(getMiFecha().getMonthValue() == mes && movim.getMiFecha().getYear() == año)
-				.map(mov -> mov.getImporte())
-				.reduce(0d,(subt, el) -> subt + el);S*/
-				
-						
-		for (@SuppressWarnings("rawtypes")
-		Iterator iter = mMovimientos.iterator(); iter.hasNext();) {
-			Movimiento movim = (Movimiento) iter.next();
-			if (movim.getMiFecha().getMonthValue() == mes && movim.getMiFecha().getYear() == año) {
-				r += movim.getMiImporte();
-				iter.remove();
-			}
-		}
 
+		r = mMovimientos.stream()
+				.filter(mov -> mov.getMiFecha().getMonthValue() == mes && mov.getMiFecha().getYear() == año)
+				.map(mov -> mov.getMiImporte()).reduce(0d, (subt, el) -> subt + el);
+
+		mMovimientos = new ArrayList<Movimiento>(mMovimientos.stream()
+				.filter(mov -> !(mov.getMiFecha().getMonthValue() == mes && mov.getMiFecha().getYear() == año))
+				.collect(Collectors.toList()));
+
+		liquidar.setMiFecha(LocalDate.of(año, mes, 27));
 		liquidar.setMiImporte(r);
+
+		/*
+		 * for (@SuppressWarnings("rawtypes") Iterator iter = mMovimientos.iterator();
+		 * iter.hasNext();) { Movimiento movim = (Movimiento) iter.next(); if
+		 * (movim.getMiFecha().getMonthValue() == mes && movim.getMiFecha().getYear() ==
+		 * año) { r += movim.getMiImporte(); iter.remove(); } }
+		 */
 
 		if (r != 0) {
 			getmCuentaAsociada().addMovimiento(liquidar);

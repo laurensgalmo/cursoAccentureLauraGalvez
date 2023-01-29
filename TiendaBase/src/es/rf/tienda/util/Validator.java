@@ -67,10 +67,10 @@ public class Validator {
 		 **************************************************************************************/
 	public static boolean isAlfanumeric(String texto) {
 		if (texto != null && texto.matches(ALFANUMERIC_PATTERN)) {
-			return false;
+			return true;
 		}
 
-		return true;
+		return false;
 	}
 
 	/*
