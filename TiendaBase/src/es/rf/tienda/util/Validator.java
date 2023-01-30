@@ -19,40 +19,39 @@ public class Validator {
 
 	private static final String PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
 
-	/**
-	 * Patrón para validar el email, evitando puntos finales antes de la @ y que
-	 * solo contenga carácteres alfanuméricos
-	 */
-
 	private final static String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
-	/**
-	 * Permite verificar que un DNI cumple con el patrón; XX.XXX.XXX-L
-	 */
 
 	@SuppressWarnings("unused")
 	private final static String DNI_PATTERN = "\\d{2}\\.\\d{3}\\.\\d{3}-[a-zA-Z]";
 
-	/**
-	 * Permite validar un teléfono, el cual debe contener de 10 a 20 dígitos y donde
-	 * los espacios están permitidos
-	 */
-
 	private final static String PHONE_PATTERN = "[\\d ]{10,20}";
-
-	/**
-	 * Orden de las letras con las cuales se comprobarán la validez del DNI
-	 */
 
 	@SuppressWarnings("unused")
 	private final static String LETRA_DNI = "TRWAGMYFPDXBNJZSQVHLCKE";
 
-	/**
-	 * Longitud que debe tener todo DNI pasado a la aplicación
-	 */
-
 	@SuppressWarnings("unused")
 	private final static int LONGITUD_DNI = 12;
+
+	private static final String CODIGO_PRODUCTO_PATTERN = "^[A-Z]{2}[0-9]{3}$";
+
+	/**
+	 * NOMBRE: codigoProducto
+	 * 
+	 * DESCRIPCIÓN: Permite verificar que el texto pasado solo contiene dos letras
+	 * mayúsculas y tres numeros
+	 * 
+	 * @param texto String
+	 * 
+	 * @return TRUE, si cumple y FALSE en caso contrario
+	 */
+
+	public static boolean codigoProducto(String texto) {
+		if (texto != null && texto.matches(CODIGO_PRODUCTO_PATTERN)) {
+			return true;
+		}
+
+		return false;
+	}
 
 	/**
 	 * NOMBRE: isAlfanumeric

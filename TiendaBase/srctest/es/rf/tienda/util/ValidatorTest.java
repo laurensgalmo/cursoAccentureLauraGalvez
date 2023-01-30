@@ -27,6 +27,16 @@ class ValidatorTest {
 	final String FECHA_NO_VALIDA = "12-12-2020";
 	final String FECHA2_NO_VALIDA = "2020-12-20";
 	final String FECHA_VALIDA = "12/12/2020";
+	final String CODIGO_BUENO = "IN325";
+	final String CODIGO_MALO = "in325";
+	final String CODIGO2_MALO = "INNN325";
+
+	@Test
+	void testCodigoProducto() {
+		assertTrue(Validator.codigoProducto(CODIGO_BUENO));
+		assertFalse(Validator.codigoProducto(CODIGO_MALO));
+		assertFalse(Validator.codigoProducto(CODIGO2_MALO));
+	}
 
 	@Test
 	void testIsAlfanumeric() {
