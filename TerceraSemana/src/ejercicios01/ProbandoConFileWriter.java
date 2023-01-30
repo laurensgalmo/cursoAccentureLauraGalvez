@@ -11,10 +11,10 @@ public class ProbandoConFileWriter {
 		PrintWriter pw = null;
 
 		try {
-			fichero = new FileWriter("ejercicioScanner.txt");
+			fichero = new FileWriter("ejercicioLeerFichero.txt");
 			pw = new PrintWriter(fichero);
 
-			for (int i = 0; i < 0; i++) {
+			for (int i = 0; i < 10; i++) {
 				pw.println("linea" + i);
 
 			}
