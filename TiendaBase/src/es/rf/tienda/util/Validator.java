@@ -2,6 +2,7 @@ package es.rf.tienda.util;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -22,7 +23,7 @@ public class Validator {
 	private final static String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
 	@SuppressWarnings("unused")
-	private final static String DNI_PATTERN = "\\d{2}\\.\\d{3}\\.\\d{3}-[a-zA-Z]";
+	private final static String DNI_PATTERN = "^\\d{2}\\.\\d{3}\\.\\d{3}-[A-Za-z]$";
 
 	private final static String PHONE_PATTERN = "[\\d ]{10,20}";
 
@@ -112,7 +113,7 @@ public class Validator {
 	 * NOMBRE: cumpleDNI
 	 * 
 	 * DESCRIPCIÓN: Esta función verifica que el DNI cumple el siguiente formato:
-	 * xx.xxx.xxx-L El DNI ha de tener longitud 12
+	 * xx.xxx.xxx-L
 	 * 
 	 * @param dni String con DNI a ser validado
 	 * 
@@ -121,16 +122,16 @@ public class Validator {
 
 	public static boolean cumpleDNI(String dni) {
 
-		// COGER DNI Y DIVIDRLO EN PARTE NUMERICA(ESTA SE CONVIERTE EN NUMERO
-		// PARA APLICARLE EL MODULO 23 Y EL PATTERN)
-		// Y PARTE LETRA
-		String dniPattern = "\\d{11}[A-Za-z]$";
-		return Pattern.matches(dniPattern, dni);
+		Pattern pattern = Pattern.compile(DNI_PATTERN);
+		Matcher matcher = pattern.matcher(dni);
+		return matcher.matches();
+
 	}
 
 	/**
-	 * NOMBRE: cumpleRango DESCRIPCI�N: Comprueba que un número se necuentra entre 2
-	 * valores
+	 * NOMBRE: cumpleRango
+	 * 
+	 * DESCRIPCIÓN: Comprueba que un número se necuentra entre 2 valores
 	 * 
 	 * @param valor       (int)/(double) Número a comprobar
 	 * @param valorMinimo (int) Mínimo valor aceptable

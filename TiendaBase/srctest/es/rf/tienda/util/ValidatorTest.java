@@ -13,7 +13,7 @@ class ValidatorTest {
 	final String MOVIL_BUENO = "65565575534";
 	final String MOVIL_MALO = "01234567891011121314151617181920";
 	final String EMAIL_BUENO = "test@gmail.com";
-	final String DNI_BUENO = "11121212121S";
+	final String DNI_BUENO = "12.111.111-A";
 	final String DNI_MALO = "1234A";
 	final String TEXTO_LONG_BUENO = "hhhhhhhhhhhhaaaahaha";
 	final String TEXTO_LONG_MALO = "AA A F C";
