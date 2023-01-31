@@ -18,25 +18,26 @@ public class LeerFichero {
 
 		// Lectura de fichero
 
-		File archivo = new File ("C:\\ficheroLaura.txt");
-		FileReader fr = new FileReader (archivo);
+		File archivo = new File("C:\\ficheroLaura.txt");
+		FileReader fr = new FileReader(archivo);
 		BufferedReader br = new BufferedReader(fr); // Lectura por línea
 
 		String nombre = "";
 		String apellido = "";
 		String linea = "";
-		
+
 		while ((linea = br.readLine()) != null) {
-			
-				String dato[] = linea.split("=");
-				
-				if(dato[0].equals("NOMBRE")) {
-					nombre = dato[1];
+
+			String dato[] = linea.split("=");
+
+			if (dato[0].equals("NOMBRE")) {
+				nombre = dato[1];
 			}
-				if(dato[0].equals("APELLIDO")) {
-					apellido = dato[1];
-				}
-				System.out.println(nombre + " " + apellido);
+			if (dato[0].equals("APELLIDO")) {
+				apellido = dato[1];
+			}
+			
 		}
+		System.out.println(nombre + " " + apellido);
 	}
 }
