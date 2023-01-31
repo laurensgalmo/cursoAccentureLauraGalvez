@@ -1,5 +1,11 @@
 package ejercicios01;
 
+/**
+ * Probando FileWriter
+ * 
+ * @author laura.galvez.moya
+ */
+
 import java.io.FileWriter;
 import java.io.PrintWriter;
 

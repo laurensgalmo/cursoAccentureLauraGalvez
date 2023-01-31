@@ -1,5 +1,11 @@
 package ejercicios01;
 
+/**
+ * Probando con classPath
+ * 
+ * @author laura.galvez.moya
+ */
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 

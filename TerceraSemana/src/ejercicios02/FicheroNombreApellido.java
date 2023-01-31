@@ -1,5 +1,7 @@
 package ejercicios02;
 
+import java.io.File;
+
 /**
  * Programa que pide por teclado los siguientes datos: nombre, apellidos
  * NOTA: Grabar un fichero con la estructura Nombre = xxx Apellido = xxx
@@ -8,12 +10,15 @@ package ejercicios02;
  */
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class FicheroNombreApellido {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+
+		FileWriter fichero = new FileWriter("C:\\ficheroLaura.txt");
 
 		// Pedir por teclado
 
@@ -25,29 +30,10 @@ public class FicheroNombreApellido {
 		System.out.println("Introduzca apellido: ");
 		String apellido = scan.nextLine();
 
-		// FileWriter, escribir en fichero
+		PrintWriter ww = new PrintWriter(fichero);
+		ww.println("NOMBRE=" + nombre);
+		ww.println("APELLIDO=" + apellido);
+		ww.close();
 
-		FileWriter fichero = null;
-		PrintWriter pw = null;
-
-		try {
-			fichero = new FileWriter("c:/ficheroLaura.txt");
-			pw = new PrintWriter(fichero);
-			pw.println("Mi nombre es:  " + nombre);
-			pw.println("Mi apellido es:  " + apellido);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-
-			try {
-				if (null != fichero) {
-					fichero.close(); // Es importante cerrar el fichero
-				}
-
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
-		}
 	}
 }

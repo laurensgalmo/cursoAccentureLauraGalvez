@@ -10,38 +10,33 @@ package ejercicios02;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class LeerFichero {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		// Lectura de fichero
 
-		File archivo = null;
-		FileReader fr = null;
-		BufferedReader br = null;
+		File archivo = new File ("C:\\ficheroLaura.txt");
+		FileReader fr = new FileReader (archivo);
+		BufferedReader br = new BufferedReader(fr); // Lectura por línea
 
-		try {
-			archivo = new File("C:\\ficheroLaura.txt");
-			fr = new FileReader(archivo); // Lectura
-			br = new BufferedReader(fr); // Lectura por línea
-
-			String linea;
-			while ((linea = br.readLine()) != null)
-				System.out.println(linea);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		} finally {
-			try {
-				if (null != fr) {
-					fr.close();
-				}
-
-			} catch (Exception e2) {
-				e2.printStackTrace();
+		String nombre = "";
+		String apellido = "";
+		String linea = "";
+		
+		while ((linea = br.readLine()) != null) {
+			
+				String dato[] = linea.split("=");
+				
+				if(dato[0].equals("NOMBRE")) {
+					nombre = dato[1];
 			}
+				if(dato[0].equals("APELLIDO")) {
+					apellido = dato[1];
+				}
+				System.out.println(nombre + " " + apellido);
 		}
 	}
 }
