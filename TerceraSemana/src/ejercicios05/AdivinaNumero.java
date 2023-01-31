@@ -30,9 +30,9 @@ public class AdivinaNumero {
 		do {
 			numAdivinar = scan.nextInt();
 
-			if (numAdivinar < numero) {
+			if (numAdivinar > numero) {
 				System.out.println("menor");
-			} else if (numAdivinar > numero) {
+			} else if (numAdivinar < numero) {
 				System.out.println("mayor");
 			}
 		} while (numAdivinar != numero);
