@@ -1,5 +1,12 @@
 package ejercicios04;
 
+/**
+ * Presenta numero
+ * 
+ * @author laura.galvez.moya
+ *
+ */
+
 public class PresentaNumero implements Runnable {
 
 	Buffer buf;

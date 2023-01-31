@@ -1,5 +1,11 @@
 package ejercicios04;
 
+/**
+ * Genera numero
+ * 
+ * @author laura.galvez.moya
+ */
+
 import java.util.Random;
 
 public class GeneraNumero implements Runnable {

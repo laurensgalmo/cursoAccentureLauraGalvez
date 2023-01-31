@@ -1,5 +1,11 @@
 package ejercicios04;
 
+/**
+ * Clase donde se ejecutará el programa
+ * 
+ * @author laura.galvez.moya
+ *
+ */
 public class ClaseMain {
 
 	static Buffer buf;
