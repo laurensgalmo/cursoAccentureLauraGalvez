@@ -5,14 +5,14 @@ import java.util.Set;
 
 public class Baraja {
 
-	Set<Carta> baraja = new HashSet<>();
+	static final String POKER = "POKER";
+	static final String[] PALOS = { "picas", "diamantes", "treboles", "corazones" };
+	private Set<Carta> baraja = new HashSet<>();
 
-	public Baraja() {
-
-		String[] palo = { "copas", "bastos", "oros", "espadas" };
-
+	public Baraja(String tipo) {
+		String[] palo = PALOS;
 		for (String pp : palo) {
-			for (int i = 1; i < 13; i++) {
+			for (int i = 1; i < 14; i++) {
 				Carta cc = new Carta();
 				cc.setNumeroCarta(i);
 				cc.setPalo(pp);
@@ -20,4 +20,21 @@ public class Baraja {
 			}
 		}
 	}
+
+	public Set<Carta> getBaraja() {
+		return baraja;
+	}
+
+	public void setBaraja(Set<Carta> baraja) {
+		this.baraja = baraja;
+	}
+
+	public static String getPoker() {
+		return POKER;
+	}
+
+	public static String[] getPalos() {
+		return PALOS;
+	}
+
 }
