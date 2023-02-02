@@ -36,5 +36,4 @@ public class Baraja {
 	public static String[] getPalos() {
 		return PALOS;
 	}
-
 }

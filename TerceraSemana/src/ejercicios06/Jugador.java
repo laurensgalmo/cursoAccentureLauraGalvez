@@ -41,4 +41,8 @@ public class Jugador {
 		mano.add(carta);
 	}
 
+	@Override
+	public String toString() {
+		return "Jugador [nombre = " + nombre + " , edad = " + edad + " , mano = " + mano + "]";
+	}
 }
