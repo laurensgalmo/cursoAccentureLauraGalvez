@@ -45,17 +45,13 @@ public class Juego {
 		jugadores.add(jugador2);
 		jugadores.add(jugador3);
 		jugadores.add(jugador4);
-		
-		for (Jugador ju: jugadores) {
-			
-			
-		}
 
 		// Repartir 5 cartas de la baraja (manos) a 4 jugadores
-
+		Jugador[] infoJugador = jugadores.toArray(new Jugador[jugadores.size()]);
 		Iterator<Carta> ite = baraja.iterator();
 		for (int i = 0; i < 4; i++) {
-			System.out.println("Cartas del jugador " + (i + 1) + ":");
+			System.out.println(
+					"Cartas del jugador " + infoJugador[i].getNombre() + " de edad " + infoJugador[i].getEdad() + ":");
 			for (int j = 0; j <= 5; j++) {
 				System.out.println(ite.next());
 			}
