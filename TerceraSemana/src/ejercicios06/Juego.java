@@ -46,7 +46,8 @@ public class Juego {
 		jugadores.add(jugador3);
 		jugadores.add(jugador4);
 
-		// Repartir 5 cartas de la baraja (manos) a 4 jugadores
+		// Repartir 5 cartas de la baraja a 4 jugadores
+
 		Jugador[] infoJugador = jugadores.toArray(new Jugador[jugadores.size()]);
 		Iterator<Carta> ite = baraja.iterator();
 		for (int i = 0; i < 4; i++) {

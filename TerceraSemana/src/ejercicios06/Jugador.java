@@ -40,9 +40,4 @@ public class Jugador {
 	public void setCarta(Carta carta) {
 		mano.add(carta);
 	}
-
-	@Override
-	public String toString() {
-		return "Jugador [nombre = " + nombre + " , edad = " + edad + "]";
-	}
 }
