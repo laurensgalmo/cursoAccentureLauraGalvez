@@ -1,6 +1,7 @@
 package ejercicios06;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Juego {
@@ -26,16 +27,16 @@ public class Juego {
 		jugador1.setEdad(26);
 
 		Jugador jugador2 = new Jugador();
-		jugador1.setNombre("Marc");
-		jugador1.setEdad(44);
+		jugador2.setNombre("Marc");
+		jugador2.setEdad(44);
 
 		Jugador jugador3 = new Jugador();
-		jugador1.setNombre("Maria");
-		jugador1.setEdad(31);
+		jugador3.setNombre("Maria");
+		jugador3.setEdad(31);
 
 		Jugador jugador4 = new Jugador();
-		jugador1.setNombre("Pau");
-		jugador1.setEdad(60);
+		jugador4.setNombre("Pau");
+		jugador4.setEdad(60);
 
 		// Añadir jugadores a una lista
 
@@ -44,17 +45,20 @@ public class Juego {
 		jugadores.add(jugador2);
 		jugadores.add(jugador3);
 		jugadores.add(jugador4);
-
-		// Recorremos la lista de jugadores
-
-		for (Jugador ju : jugadores) {
-
+		
+		for (Jugador ju: jugadores) {
+			
+			
 		}
-	}
 
-	// Repartir 5 cartas de la baraja (manos) a 4 jugadores
+		// Repartir 5 cartas de la baraja (manos) a 4 jugadores
 
-	public static void repartirCartas() {
-
+		Iterator<Carta> ite = baraja.iterator();
+		for (int i = 0; i < 4; i++) {
+			System.out.println("Cartas del jugador " + (i + 1) + ":");
+			for (int j = 0; j <= 5; j++) {
+				System.out.println(ite.next());
+			}
+		}
 	}
 }

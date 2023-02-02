@@ -43,6 +43,6 @@ public class Jugador {
 
 	@Override
 	public String toString() {
-		return "Jugador [nombre = " + nombre + " , edad = " + edad + " , mano = " + mano + "]";
+		return "Jugador [nombre = " + nombre + " , edad = " + edad + "]";
 	}
 }
