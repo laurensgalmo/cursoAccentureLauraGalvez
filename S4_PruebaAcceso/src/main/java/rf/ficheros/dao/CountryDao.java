@@ -35,12 +35,12 @@ public class CountryDao implements CountryDaoI {
 			// Statement stm = conn.createStatement();
 			// rs = stm.executeQuery(SQL_LEER_COUNTRY_POR_ID + " " + country_id + " ");
 			PreparedStatement ps = conn.prepareStatement(SQL_LEER_COUNTRY_POR_ID2);
-			ps.setString(1, "BR");
+			ps.setString(1, country_id);
 			rs = ps.executeQuery();
 			rs.next();
 			return carga(rs);
 		} catch (SQLException e) {
-			throw new Exception(SQL_LEER_COUNTRY_POR_ID2 + " " + e.getMessage());
+			throw new Exception(SQL_LEER_COUNTRY_POR_ID + " " + e.getMessage());
 
 		}
 	}
