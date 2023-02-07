@@ -11,7 +11,7 @@ public class Main {
 
 		CountryController cc = new CountryController();
 		List<Country> ll = cc.leerTodos();
-		//listarCtr(ll);
+		listarCtr(ll);
 
 		System.out.println();
 		System.out.println(cc.leerUno("BR"));
@@ -25,6 +25,11 @@ public class Main {
 
 		Country datos2 = cc.leerUno("BR");
 		System.out.println("Actualizados, borrando..." + cc.borrar(datos2));
+	}
+
+	private static void listarCtr(List<Country> ll) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
